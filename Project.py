@@ -5,7 +5,8 @@ mp_drawing_styles = mp.solutions.drawing_styles
 mp_hands = mp.solutions.hands
 
 # Imagini statice:
-IMAGE_FILES = []
+IMAGE_FILES = ["Hands1.jpg", "Hands2.jpg", "Hands3.jpg", "Hands4.jpg", "NotHand1.jpg"]
+OUTPUT_PATH = "C:/Users/Bogdan/ACIproject/output_/"
 with mp_hands.Hands(
     static_image_mode=True,
     max_num_hands=2,
@@ -34,8 +35,8 @@ with mp_hands.Hands(
           mp_hands.HAND_CONNECTIONS,
           mp_drawing_styles.get_default_hand_landmarks_style(),
           mp_drawing_styles.get_default_hand_connections_style())
-    cv2.imwrite(
-        '/tmp/annotated_image' + str(idx) + '.png', cv2.flip(annotated_image, 1))
+      output_file = f"{OUTPUT_PATH}{idx}_annotated.jpg"
+      cv2.imwrite(output_file, annotated_image)
 
     if not results.multi_hand_world_landmarks:
       continue
