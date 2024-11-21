@@ -9,7 +9,7 @@ IMAGE_FILES = ["Hands1.jpg", "Hands2.jpg", "Hands3.jpg", "Hands4.jpg", "NotHand1
 OUTPUT_PATH = "output_/"
 with mp_hands.Hands(
     static_image_mode=True,
-    max_num_hands=2,
+    max_num_hands=9,
     min_detection_confidence=0.5) as hands:
   for idx, file in enumerate(IMAGE_FILES):
     
