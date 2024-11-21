@@ -5,7 +5,7 @@ mp_drawing_styles = mp.solutions.drawing_styles
 mp_hands = mp.solutions.hands
 
 # Imagini statice:
-IMAGE_FILES = ["Hands1.jpg", "Hands2.jpg", "Hands3.jpg", "Hands4.jpg", "NotHand1.jpg"]
+IMAGE_FILES = ["Hands1.jpg", "Hands2.jpg", "Hands3.jpg", "NotHand1.jpg", "NotHand2.jpg"]
 OUTPUT_PATH = "output_/"
 with mp_hands.Hands(
     static_image_mode=True,
