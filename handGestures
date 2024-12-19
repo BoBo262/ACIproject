@@ -17,8 +17,6 @@ for imPath in myList:
     overlayList.append(image)
 
 
-pTime = 0
-
 detector = htm.handDetector(detectionCon=0.75)
 
 tipIds = [4, 8, 12, 16, 20]
@@ -49,11 +47,6 @@ while True:
         h,w,c = overlayList[totalFingers].shape
         img[0:h, 0:w] = overlayList[totalFingers]
 
-    cTime =time.time()
-    fps = 1/(cTime-pTime)
-    pTIme=cTime
-
-    cv2.putText(img,f'FPS: {int(fps)}', (400,70), cv2.FONT_HERSHEY_COMPLEX, 3, (255, 0, 0), 3)
 
     cv2.imshow("Image", img)
     cv2.waitKey(1)
